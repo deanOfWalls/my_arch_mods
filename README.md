@@ -17,3 +17,9 @@ MimeType=image/svg+xml;
 * This can be done by deleting the files in '~/cache/thumbnails/'.
 
 ### Restart the File Manager
+
+### Remember to clear thumbnail cache
+
+```
+rm -r ~/.cache/thumbnails/*
+```
