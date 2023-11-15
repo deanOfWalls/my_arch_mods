@@ -10,6 +10,9 @@
 # GNOME offers this functionality by default but doesn't meet my desired outcome when it comes to
 # the background color of the thumbnails.
 
+# when running this script make sure to use the correct syntax, e.g.,:
+# ./svg-thumbnailer.sh /path-to-svg.svg /path-to-png-thumb.png
+
 
 # Input and output file paths from arguments
 
@@ -17,10 +20,17 @@
 infile="$1"
 
 # The second argument is the output file path for the thumbnail
-outfile"$2"
+outfile="$2"
 
 # Attempt to steal (retrieve) the primary background color from GNOME settings
 bgcolor=$(gsettings get org.gnome.desktop.background primary-color)
+
+# use sed to extract color code
+bgcolor=$(echo $bgcolor | sed "s/'//g" | sed "s/^#//g" | cut -c 1-6)
+
+# prepend '#' to the color code
+bgcolor="#$bgcolor"
+
 
 # Background color for the thumbnail.
 # This is set to black (#000000) by default.
