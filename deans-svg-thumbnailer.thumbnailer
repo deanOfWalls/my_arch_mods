@@ -1,0 +1,4 @@
+[Thumbnailer Entry]
+TryExec=/home/dean/my_arch_mods/svg-thumbnailer.sh
+Exec=/home/dean/my_arch_mods/svg-thumbnailer.sh
+MimeType=image/svg+xml;
