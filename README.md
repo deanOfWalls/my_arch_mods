@@ -4,6 +4,7 @@
 
 * Create a '.thumbnailer' file in '/usr/share/thumbnailers/'.
 * Edit the thumbnailer file to specify the script should be used to generate thumbnails for SVG files.
+* Make sure to use chmod to grant x permissions.
 
 ```
 [Thumbnailer Entry]
