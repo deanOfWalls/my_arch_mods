@@ -21,5 +21,5 @@ MimeType=image/svg+xml;
 ### Remember to clear thumbnail cache
 
 ```
-rm -r ~/.cache/thumbnails/*
+rm -rf ~/.cache/thumbnails/*
 ```
