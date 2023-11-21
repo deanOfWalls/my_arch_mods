@@ -18,13 +18,14 @@ FILENAME="$SCREENSHOT_DIR/screenshot-$(date +%Y%m%d%H%M%S).png"
 # -w limits the region to the active window
 # -d add a time delay (in seconds). this is useful for capturing drop down menus, etc.
 # -f specify path and filename
+# -c copies to clipboard
 # -a specify area
 # as a note, you cannot use -d with -a
 
 if [ "$1" == "area" ]; then
-	gnome-screenshot -a -f "$FILENAME"
+	gnome-screenshot -a -c -f "$FILENAME"
 elif [ "$1" == "full" ]; then
-	gnome-screenshot -f "$FILENAME"
+	gnome-screenshot -c -f "$FILENAME"
 else
 	echo "Invalid argument. Use "area" or "full"."
 fi
