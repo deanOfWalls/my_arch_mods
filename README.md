@@ -1,26 +1,43 @@
-## Instructions for use
+# My Arch Mods
 
-### Update Thumbnailer entry to use this script
+Welcome to the "my_arch_mods" GitHub repository! This repository contains a collection of modifications (mods) and custom scripts that enhance your Arch Linux experience. Below, you'll find a table of contents to help you navigate through this README and understand the purpose of this repository.
 
-* Create a '.thumbnailer' file in '/usr/share/thumbnailers/'.
-* Edit the thumbnailer file to specify the script should be used to generate thumbnails for SVG files.
-* Make sure to use chmod to grant x permissions.
+## Table of Contents
 
-```
+1. [Introduction](#introduction)
+2. [Mods Overview](#mods-overview)
+3. [Modifications](#modifications)
+    - [Thumbnailer Script](#thumbnailer-script)
+    - [Screenshot Script](#screenshot-script)
+4. [Usage](#usage)
+5. [Contributing](#contributing)
+6. [License](#license)
+
+## Introduction <a name="introduction"></a>
+
+Arch Linux is known for its flexibility and customization options, and this repository aims to provide useful modifications and scripts that can enhance your Arch Linux experience. Whether you're looking for thumbnailer configuration or a custom screenshot script, you'll find them here.
+
+## Mods Overview <a name="mods-overview"></a>
+
+In this repository, you'll find the following modifications:
+
+- Thumbnailer Script: A script to configure and enhance thumbnail generation for SVG files.
+- Screenshot Script: A custom script for taking screenshots with various options.
+
+## Modifications <a name="modifications"></a>
+
+### Thumbnailer Script <a name="thumbnailer-script"></a>
+
+The Thumbnailer Script in this repository allows you to improve the thumbnail generation for SVG files. To use it, follow these steps:
+
+1. Create a '.thumbnailer' file in '/usr/share/thumbnailers/'.
+2. Edit the thumbnailer file to specify that the script should be used to generate thumbnails for SVG files.
+3. Ensure that you grant execute (x) permissions to the script.
+
+Here's an example '.thumbnailer' entry:
+
+```ini
 [Thumbnailer Entry]
 TryExec=/path/to/your/svg-thumbnailer.sh
 Exec=/path/to/your/svg-thumbnailer.sh %u %o
 MimeType=image/svg+xml;
-```
-
-### Remember to clear existing thumbnails
-
-* This can be done by deleting the files in '~/cache/thumbnails/'.
-
-### Restart the File Manager
-
-### Remember to clear thumbnail cache
-
-```
-rm -rf ~/.cache/thumbnails/*
-```
