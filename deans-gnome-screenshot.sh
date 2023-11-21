@@ -1,6 +1,8 @@
 #!/bin/bash
 
 # This script is intended to work with the native screenshot app that comes with gnome on xorg
+# Please note that in newer versions of GNOME the screenshot util is baked in and isn't an external
+# app so you'll need to install an older one via pacman
 
 # Directory to save screenshots in
 SCREENSHOT_DIR=~/Pictures/Screenshots
