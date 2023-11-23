@@ -1,6 +1,6 @@
 # My Arch Mods
 
-Welcome to the "my_arch_mods" GitHub repository! This repository contains a collection of modifications (mods) and custom scripts that enhance your Arch Linux experience. Below, you'll find a table of contents to help you navigate through this README and understand the purpose of this repository.
+This repository contains a collection of modifications and custom scripts that enhance your Arch Linux experience. Below, you'll find a table of contents to help you navigate through this README and understand the purpose of this repository. This is primarily tailored to enhancing my own Arch user experience and facilitating quick setup in the event of a new installation.
 
 ## Table of Contents
 
@@ -15,7 +15,7 @@ Welcome to the "my_arch_mods" GitHub repository! This repository contains a coll
 
 ## Introduction <a name="introduction"></a>
 
-Arch Linux is known for its flexibility and customization options, and this repository aims to provide useful modifications and scripts that can enhance your Arch Linux experience. Whether you're looking for thumbnailer configuration or a custom screenshot script, you'll find them here.
+Arch Linux is known for its flexibility and customization options, and this repository aims to provide useful modifications and scripts that can enhance your Arch Linux experience. 
 
 ## Mods Overview <a name="mods-overview"></a>
 
