@@ -9,6 +9,7 @@ This repository contains a collection of modifications and custom scripts that e
 3. [Modifications](#modifications)
     - [Thumbnailer Script](#thumbnailer-script)
     - [Screenshot Script](#screenshot-script)
+    - [Git Alias in .bashrc](#git-alias-in-bashrc)
 4. [Usage](#usage)
 5. [Contributing](#contributing)
 6. [License](#license)
@@ -23,6 +24,7 @@ In this repository, you'll find the following modifications:
 
 - Thumbnailer Script: A script to configure and enhance thumbnail generation for SVG files.
 - Screenshot Script: A custom script for taking screenshots with various options.
+- Git Alias in .bashrc: A custom shell function to streamline Git operations.
 
 ## Modifications <a name="modifications"></a>
 
