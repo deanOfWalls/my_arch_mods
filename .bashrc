@@ -24,4 +24,5 @@ export PATH=$PATH:$JAVA_HOME/bin
 gitac() {
    git add .
    git commit -m "$*"
+   git push
 }
