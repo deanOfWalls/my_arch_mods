@@ -49,16 +49,35 @@ MimeType=image/svg+xml;
 
 The Screenshot Script has been tailored to use `scrot`, a lightweight command-line screen capture tool. This script allows for capturing the screen where the cursor is located, providing more control over the screenshot process. It includes options for full screen and area selection captures.
 
+#### Usage
+
 To use the script, simply execute it with the desired mode (full or area). The script will determine the display containing the cursor and capture the screen accordingly. It's designed to be efficient and flexible, suitable for a variety of screenshot needs.
 
-Make sure to add custom shortcuts for each function, e.g.,:
-```
-/path-to-file/deans-gnome-screenshot.sh full
-```
-```
-/path-to-file/deans-gnome-screenshot.sh area
-```
+Here are the available modes:
 
+- **Full Screen**: Capture the entire screen of the display containing the cursor.
+  - Example command: `/path-to-file/deans-gnome-screenshot.sh full`
+
+- **Area Selection**: Select an area on the screen to capture.
+  - Example command: `/path-to-file/deans-gnome-screenshot.sh area`
+
+#### Copy to Clipboard
+
+The script uses `xclip`, a clipboard management tool, to copy the captured screenshot to the clipboard. This allows you to easily paste the screenshot into other applications.
+
+#### Adding Custom Shortcuts
+
+To streamline the usage of the Screenshot Script, you can add custom shortcuts in your desktop environment for each function. For example, you can set up the following custom shortcuts:
+
+- **Full Screen Shortcut**: Assign a keyboard shortcut (e.g., PrtSc) to execute the script with the "full" argument.
+  - Command: `/path-to-file/deans-gnome-screenshot.sh full`
+
+- **Area Selection Shortcut**: Assign a keyboard shortcut (e.g., Shift + PrtSc) to execute the script with the "area" argument.
+  - Command: `/path-to-file/deans-gnome-screenshot.sh area`
+
+These custom shortcuts make it quick and easy to capture screenshots as per your requirements.
+
+Make sure to have the necessary dependencies, such as `scrot` and `xclip`, installed for the script to work correctly.
 
 
 ### Git Alias in .bashrc <a name="git-alias-in-bashrc"></a>
