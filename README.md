@@ -51,6 +51,16 @@ The Screenshot Script has been tailored to use `scrot`, a lightweight command-li
 
 To use the script, simply execute it with the desired mode (full or area). The script will determine the display containing the cursor and capture the screen accordingly. It's designed to be efficient and flexible, suitable for a variety of screenshot needs.
 
+Make sure to add custom shortcuts for each function, e.g.,:
+```
+/path-to-file/deans-gnome-screenshot.sh full
+```
+```
+/path-to-file/deans-gnome-screenshot.sh area
+```
+
+
+
 ### Git Alias in .bashrc <a name="git-alias-in-bashrc"></a>
 
 The Git Alias in `.bashrc` is a custom shell function that streamlines Git operations, making it easier to perform common Git commands. This modification is particularly useful for developers who frequently use Git as part of their workflow.
