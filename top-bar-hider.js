@@ -7,7 +7,7 @@ var panelHeight;
 // Init function called when the extension is initialized
 function init(){
     //get default panel height from Main panel object
-    panelHeigh = Main.panel.get_height();    
+    panelHeight = Main.panel.get_height();    
 }
 
 // enable fuction called when extension is enabled
