@@ -46,14 +46,14 @@ get_display_geometry() {
 # Check for the screenshot mode (area select/whole screen) in the first argument ($1)
 if [ "$1" == "area" ]; then
     scrot -s "$FILENAME" # -s allows you to select an area
-    xclip -selection clipboard -t image/png -i "$FILENAME"
+    cat "$FILENAME" | xclip -selection clipboard -t image/png
 elif [ "$1" == "full" ]; then
     GEOMETRY=$(get_display_geometry)
     if [[ $GEOMETRY != "Error: Display containing cursor not found." ]]; then
         scrot "$TEMP_FILENAME" # Capture the full screen first
         convert "$TEMP_FILENAME" -crop "$GEOMETRY" "$FILENAME" # Crop to the active display
         rm "$TEMP_FILENAME" # Remove the temporary full screenshot
-        xclip -selection clipboard -t image/png -i "$FILENAME"
+        cat "$FILENAME" | xclip -selection clipboard -t image/png
     else
         echo "$GEOMETRY"
     fi
