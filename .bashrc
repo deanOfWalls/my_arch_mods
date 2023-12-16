@@ -10,6 +10,7 @@ alias grep='grep --color=auto'
 alias open='xdg-open'
 alias math='/home/dean/Dev/cli_calculator/calc.py'
 alias ghrepo='gh repo list deanofwalls --limit 1000 --visibility public  --json name,description,url'
+alias update='sudo pacman -Syu && sudo pacman -Rns $(pacman -Qtdq) && sudo paccache -r'
 
 
 # Custom ls alias to use the external script
