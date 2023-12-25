@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Redirect stdout and stderr to a log file
+exec > /tmp/deans-gnome-screenshot.log 2>&1
+echo "Running script at $(date)"
+
 # Directory to save screenshots in
 SCREENSHOT_DIR=~/Pictures/Screenshots
 
@@ -45,9 +49,11 @@ get_display_geometry() {
 
 # Check for the screenshot mode (area select/whole screen) in the first argument ($1)
 if [ "$1" == "area" ]; then
+    echo "Taking area screenshot"
     scrot -s "$FILENAME" # -s allows you to select an area
     cat "$FILENAME" | xclip -selection clipboard -t image/png
 elif [ "$1" == "full" ]; then
+    echo "Taking full screenshot"
     GEOMETRY=$(get_display_geometry)
     if [[ $GEOMETRY != "Error: Display containing cursor not found." ]]; then
         scrot "$TEMP_FILENAME" # Capture the full screen first
@@ -60,3 +66,4 @@ elif [ "$1" == "full" ]; then
 else
     echo "Invalid argument. Use 'area' or 'full'."
 fi
+    echo "Script completed successfully"
