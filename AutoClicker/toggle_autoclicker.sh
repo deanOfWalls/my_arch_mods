@@ -2,6 +2,7 @@
 
 PIDFILE="/tmp/autoclicker.pid"
 
+# Toggle the autoclicker
 if [ -f "$PIDFILE" ]; then
     kill -9 $(cat "$PIDFILE")
     rm "$PIDFILE"
@@ -11,4 +12,3 @@ else
     done &
     echo $! > "$PIDFILE"
 fi
-
