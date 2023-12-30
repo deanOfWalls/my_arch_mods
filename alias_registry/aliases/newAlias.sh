@@ -28,6 +28,6 @@ echo "#!/bin/bash" > "$ALIAS_DIR/$SCRIPT_NAME"
 chmod +x "$ALIAS_DIR/$SCRIPT_NAME"
 
 # Add the alias to alias_registry.sh
-echo "alias $ALIAS_NAME='$ALIAS_DIR/$SCRIPT_NAME \$*'" >> "$ALIAS_REGISTRY"
+echo "alias $ALIAS_NAME='$ALIAS_DIR/$SCRIPT_NAME \$@'" >> "$ALIAS_REGISTRY"
 
 echo "Alias $ALIAS_NAME created successfully."
