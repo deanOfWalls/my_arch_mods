@@ -14,5 +14,5 @@ mkdir -p "$BACKUP_DIR"
 cp "$ALIAS_REGISTRY" "$BACKUP_DIR/"
 cp -r "$ALIASES_DIR" "$BACKUP_DIR/"
 
-echo -e "\e[95mAlias Registry has been backed up to $BACKUP_DIR !\e[0m"
+echo -e "\e[38;5;205mAlias Registry has been backed up to ${BACKUP_DIR}!\e[0m"
 
