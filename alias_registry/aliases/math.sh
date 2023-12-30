@@ -48,14 +48,17 @@ def calculate(expression):
 
 def main():
     parser = argparse.ArgumentParser(description="Command-line calculator")
-    parser.add_argument("expression", type=str, help="Mathematical expression to evalua>
+    parser.add_argument("expression", type=str, help="Mathematical expression to evaluate")
 
     args = parser.parse_args()
     result = calculate(args.expression)
-    print(f"Result: {result}")
+
+    # ANSI escape code for colored output
+    # Here, 205 is the color code for light purple. You can change it as per your preference.
+    color_start = "\033[38;5;205m"
+    color_end = "\033[0m"
+
+    print(f"{color_start}Result: {result}{color_end}")
 
 if __name__ == "__main__":
     main()
-
-
-
