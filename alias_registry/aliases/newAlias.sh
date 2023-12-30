@@ -1,13 +1,11 @@
-#!/bin/bash
-
-# Check if two arguments are provided
-if [ "$#" -ne 2 ]; then
-    echo "Usage: newAlias <aliasCommandName> <aliasShellScriptName>"
+# Check if one argument is provided
+if [ "$#" -ne 1 ]; then
+    echo "Usage: newAlias <aliasCommandName>"
     exit 1
 fi
 
 ALIAS_NAME=$1
-SCRIPT_NAME=$2.sh
+SCRIPT_NAME=$1.sh
 ALIAS_DIR=~/aliases
 ALIAS_REGISTRY=~/alias_registry.sh
 
@@ -30,4 +28,4 @@ chmod +x "$ALIAS_DIR/$SCRIPT_NAME"
 # Add the alias to alias_registry.sh
 echo "alias $ALIAS_NAME='$ALIAS_DIR/$SCRIPT_NAME \$@'" >> "$ALIAS_REGISTRY"
 
-echo "Alias $ALIAS_NAME created successfully."
+echo -e "\e[38;5;205mAlias $ALIAS_NAME created succesfully!\e[0m"
