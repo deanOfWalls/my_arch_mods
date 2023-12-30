@@ -3,48 +3,21 @@
 import argparse
 import re
 
-def add(x, y):
-    return x + y
-
-def subtract(x, y):
-    return x - y
-
-def multiply(x, y):
-    return x * y
-
-def divide(x, y):
-    if y == 0:
-        return "Error: Division by zero"
-    return x / y
+def is_safe_expression(expression):
+    # Regular expression to allow only numbers, operators, and spaces
+    if re.fullmatch(r"[0-9+\-*/(). ]+", expression):
+        return True
+    return False
 
 def calculate(expression):
-    # Use regular expressions to split the expression into operands and operator
-    match = re.match(r'(\d*\.?\d+%?)([-+*/])(\d*\.?\d+%?)', expression)
-
-    if match:
-        x_str = match.group(1)
-        operator = match.group(2)
-        y_str = match.group(3)
-
-        # Remove the percentage sign if present
-        x_str = x_str.rstrip('%')
-        y_str = y_str.rstrip('%')
-
-        x = float(x_str)
-        y = float(y_str)
-
-        if operator == '+':
-            result = add(x, y)
-        elif operator == '-':
-            result = subtract(x, y)
-        elif operator == '*':
-            result = multiply(x, y)
-        elif operator == '/':
-            result = divide(x, y)
-
-        return result
+    if is_safe_expression(expression):
+        try:
+            # Directly evaluate the expression
+            return eval(expression)
+        except Exception as e:
+            return f"Error: {e}"
     else:
-        return "Invalid expression"
+        return "Invalid input: Only numbers and +, -, *, /, (, ) are allowed."
 
 def main():
     parser = argparse.ArgumentParser(description="Command-line calculator")
@@ -54,7 +27,6 @@ def main():
     result = calculate(args.expression)
 
     # ANSI escape code for colored output
-    # Here, 205 is the color code for light purple. You can change it as per your preference.
     color_start = "\033[38;5;205m"
     color_end = "\033[0m"
 
