@@ -20,7 +20,7 @@ def divide(x, y):
 def calculate(expression):
     # Use regular expressions to split the expression into operands and operator
     match = re.match(r'(\d*\.?\d+%?)([-+*/])(\d*\.?\d+%?)', expression)
-    
+
     if match:
         x_str = match.group(1)
         operator = match.group(2)
@@ -48,7 +48,7 @@ def calculate(expression):
 
 def main():
     parser = argparse.ArgumentParser(description="Command-line calculator")
-    parser.add_argument("expression", type=str, help="Mathematical expression to evaluate")
+    parser.add_argument("expression", type=str, help="Mathematical expression to evalua>
 
     args = parser.parse_args()
     result = calculate(args.expression)
@@ -56,4 +56,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
 

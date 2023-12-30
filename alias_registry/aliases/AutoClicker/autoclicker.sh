@@ -7,3 +7,7 @@ CLICK_DELAY=50
 
 xdotool click 1
 sleep $((CLICK_DELAY/1000))
+
+
+
+

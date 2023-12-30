@@ -1,0 +1,12 @@
+# Use this to add a new alias here as well as create an accompanying shell script in /aliases
+alias newAlias='~/aliases/newAlias.sh'
+alias gitpast='/home/dean/aliases/gitpast.sh $*'
+alias grep='/home/dean/aliases/grep.sh $*'
+alias open='/home/dean/aliases/open.sh $*'
+alias math='/home/dean/aliases/math.sh $*'
+alias ghrepo='/home/dean/aliases/ghrepo.sh $*'
+alias update='/home/dean/aliases/update.sh $*'
+alias tabclicker='/home/dean/aliases/tabclicker.sh $*'
+alias ls='/home/dean/aliases/ls.sh $*'
+alias aliasBackup='/home/dean/aliases/aliasBackup.sh $*'
+alias refresh='/home/dean/aliases/refresh.sh $*'
