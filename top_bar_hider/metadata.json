@@ -1,0 +1,8 @@
+{
+  "name": "Dean's GNOME Top-Bar-Hider",
+  "description": "Hides GNOME top bar until you move cursor to top edge of screen",
+  "uuid": "top-bar-hider@deanwalls.com",
+  "shell-version": ["3.38"],
+  "version": 1.0,
+  "url": "add remote repo url later"
+}
