@@ -12,3 +12,9 @@ alias aliasBackup='/home/dean/aliases/aliasBackup.sh "$@"'
 alias paste_script='/home/dean/aliases/paste_script.sh "$@"'
 alias gitac='/home/dean/aliases/gitac.sh "$@"'
 alias projectStructure='/home/dean/aliases/projectStructure.sh $@'
+alias gitIgnore='/home/dean/aliases/gitIgnore.sh $@'
+
+# Use "$@" to keep arguments distinct (recommended for most cases), 
+# and "$*" if you need all arguments as a single string.
+
+alias loseit='/home/dean/aliases/loseit.sh $@'
