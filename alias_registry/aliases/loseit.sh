@@ -1,8 +1,10 @@
 #!/bin/bash
 
 # ANSI color codes
-HOT_PINK="\033[1;95m"
+LIGHT_BLUE="\033[1;94m"
 YELLOW="\033[1;33m"
+RED="\033[1;31m"
+GREEN="\033[1;32m"
 NC="\033[0m" # No Color
 
 # Function to calculate BMR based on gender
@@ -30,22 +32,22 @@ calculate_calories_for_weight_loss() {
     echo "scale=2; $tdee - 500" | bc | xargs printf "%.0f"
 }
 
-# Function to calculate BMI and return classification
+# Function to calculate BMI and return classification with color
 calculate_bmi_and_classify() {
     local weight_kg=$(echo "$1 * 0.453592" | bc)
     local height_m=$(echo "($2 * 12 + $3) * 0.0254" | bc)
     local bmi=$(echo "scale=2; $weight_kg / ($height_m * $height_m)" | bc)
 
-    # BMI classification
+    # BMI classification with color
     local classification
     if (( $(echo "$bmi < 18.5" | bc -l) )); then
-        classification="Underweight"
+        classification="${RED}Underweight${NC}"
     elif (( $(echo "$bmi >= 18.5 && $bmi < 25" | bc -l) )); then
-        classification="Normal"
+        classification="${GREEN}Normal${NC}"
     elif (( $(echo "$bmi >= 25 && $bmi < 30" | bc -l) )); then
-        classification="Overweight"
+        classification="${RED}Overweight${NC}"
     else
-        classification="Obese"
+        classification="${RED}Obese${NC}"
     fi
 
     echo "$bmi ($classification)"
@@ -66,20 +68,20 @@ initial_bmi=$(calculate_bmi_and_classify $weight $height_ft $height_in)
 
 # Display initial information
 echo -e "${YELLOW}You are a $gender${NC}"
-echo -e "${YELLOW}You are ${HOT_PINK}$age${NC} ${YELLOW}years old${NC}"
-echo -e "${YELLOW}You are ${HOT_PINK}$height_ft${NC} ${YELLOW}feet ${HOT_PINK}$height_in${NC} ${YELLOW}inches in height${NC}"
-echo -e "${YELLOW}Initial BMI: ${HOT_PINK}$initial_bmi${NC}"
-echo -e "${YELLOW}Your TDEE is ${HOT_PINK}$tdee${NC}"
-echo -e "${YELLOW}The deficit you should use is ${HOT_PINK}500${NC}"
-echo -e "${YELLOW}Your daily caloric intake should be ${HOT_PINK}$calories${NC}"
-echo -e "${YELLOW}Your goal weight is ${HOT_PINK}$goal_weight${NC}"
+echo -e "${YELLOW}You are ${LIGHT_BLUE}$age${NC} ${YELLOW}years old${NC}"
+echo -e "${YELLOW}You are ${LIGHT_BLUE}$height_ft${NC} ${YELLOW}feet ${LIGHT_BLUE}$height_in${NC} ${YELLOW}inches in height${NC}"
+echo -e "${YELLOW}Initial BMI: ${initial_bmi}${NC}"
+echo -e "${YELLOW}Your TDEE is ${LIGHT_BLUE}$tdee${NC}"
+echo -e "${YELLOW}The deficit you should use is ${LIGHT_BLUE}500${NC}"
+echo -e "${YELLOW}Your daily caloric intake should be ${LIGHT_BLUE}$calories${NC}"
+echo -e "${YELLOW}Your goal weight is ${LIGHT_BLUE}$goal_weight${NC}"
 
 # Loop for weekly updates
 current_day=1
 current_weight=$weight
 weeks_left=$(echo "($current_weight - $goal_weight) / (500 * 7 / 3500)" | bc)
 
-echo -e "${YELLOW}Estimated weeks left until goal weight: ${HOT_PINK}$weeks_left${NC}"
+echo -e "${YELLOW}Estimated weeks left until goal weight: ${LIGHT_BLUE}$weeks_left${NC}"
 
 while [ $(echo "$current_weight > $goal_weight" | bc) -eq 1 ]; do
     # Recalculate BMR, TDEE, and caloric needs with updated weight
@@ -90,16 +92,15 @@ while [ $(echo "$current_weight > $goal_weight" | bc) -eq 1 ]; do
 
     # Display weekly update
     echo -e "\nWeek $current_day."
-    echo -e "${YELLOW}TDEE: ${HOT_PINK}$tdee${NC}"
-    echo -e "${YELLOW}Deficit number: ${HOT_PINK}500${NC}"
-    echo -e "${YELLOW}Daily caloric intake to reach goal weight: ${HOT_PINK}$calories${NC}"
-    echo -e "${YELLOW}Current weight: ${HOT_PINK}$current_weight${NC}"
-    echo -e "${YELLOW}Goal weight: ${HOT_PINK}$goal_weight${NC}"
-    echo -e "${YELLOW}Current BMI: ${HOT_PINK}$current_bmi${NC}"
-    echo -e "${YELLOW}Estimated weeks left until goal weight: ${HOT_PINK}$(echo "($current_weight - $goal_weight) / (500 * 7 / 3500)" | bc)${NC}"
+    echo -e "${YELLOW}TDEE: ${LIGHT_BLUE}$tdee${NC}"
+    echo -e "${YELLOW}Deficit number: ${LIGHT_BLUE}500${NC}"
+    echo -e "${YELLOW}Daily caloric intake to reach goal weight: ${LIGHT_BLUE}$calories${NC}"
+    echo -e "${YELLOW}Current weight: ${LIGHT_BLUE}$current_weight${NC}"
+    echo -e "${YELLOW}Goal weight: ${LIGHT_BLUE}$goal_weight${NC}"
+    echo -e "${YELLOW}Current BMI: ${current_bmi}${NC}"
+    echo -e "${YELLOW}Estimated weeks left until goal weight: ${LIGHT_BLUE}$(echo "($current_weight - $goal_weight) / (500 * 7 / 3500)" | bc)${NC}"
 
     # Update for next iteration
     current_weight=$(echo "$current_weight - (500 * 7 / 3500)" | bc)
     current_day=$(($current_day + 1))
 done
-#!/bin/bash
