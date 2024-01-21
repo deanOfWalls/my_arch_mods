@@ -1,0 +1,17 @@
+QScrollBar:vertical {
+    border: 1px solid grey; /* Adjust the border color if needed */
+    background: #555555; /* Dark gray background */
+    width: 10px; /* Adjust the width if needed */
+    margin: 0px 0px 0px 0px;
+}
+QScrollBar::handle:vertical {
+    background: #CCCCCC; /* Light gray for the thumb/scroll box */
+    min-height: 20px; /* Adjust the minimum height if needed */
+}
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    border: 0px solid grey;
+    background: #555555;
+    height: 0px;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
