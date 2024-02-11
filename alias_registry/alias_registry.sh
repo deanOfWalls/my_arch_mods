@@ -18,3 +18,4 @@ alias gitIgnore='/home/dean/aliases/gitIgnore.sh $@'
 # and "$*" if you need all arguments as a single string.
 
 alias loseit='/home/dean/aliases/loseit.sh $@'
+alias battery='/home/dean/aliases/battery.sh $@'
