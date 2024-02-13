@@ -19,3 +19,4 @@ alias gitIgnore='/home/dean/aliases/gitIgnore.sh $@'
 
 alias loseit='/home/dean/aliases/loseit.sh $@'
 alias battery='/home/dean/aliases/battery.sh $@'
+alias listen='/home/dean/aliases/listen.sh $@'
