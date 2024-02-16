@@ -13,6 +13,6 @@ if [ ! -f "$1" ]; then
 fi
 
 # Copy the contents of the file to the clipboard using xclip
-cat "$1" | xclip -selection clipboard
+cat "$1" | xclip -selection primary
 
 echo "Contents of '$1' copied to the clipboard."
