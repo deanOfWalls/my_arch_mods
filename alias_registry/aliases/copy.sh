@@ -12,7 +12,8 @@ if [ ! -f "$1" ]; then
     exit 1
 fi
 
-# Copy the contents of the file to the clipboard using xclip
+# Copy the contents of the file to the primary selection buffer using xclip
 cat "$1" | xclip -selection primary
 
-echo "Contents of '$1' copied to the clipboard."
+# Print a message indicating that the file has been copied
+echo -e "\e[38;5;205mContents of '$1' copied to the primary selection buffer.\e[0m"
