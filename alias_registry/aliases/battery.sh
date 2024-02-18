@@ -1,1 +1,11 @@
-upower -i /org/freedesktop/UPower/devices/headphones_dev_23_05_10_C4_13_EC | grep -E "model|percentage" | awk '{print "\033[1;36m" $1 ":\033[0m", "\033[1;33m" $2 "\033[0m"}'
+upower --dump | awk '
+  BEGIN { device = "" }
+  {
+    if ($1 == "Device:") {
+      device = $2
+    } else if ($1 == "model:" && device != "") {
+      model[device] = $2
+    } else if ($1 == "percentage:" && device != "" && device != "/org/freedesktop/UPower/devices/DisplayDevice") {
+      printf "\033[1;36mmodel:\033[0m %s\n\033[1;33mpercentage:\033[0m %s\n\n", model[device], $2
+    }
+  }'
