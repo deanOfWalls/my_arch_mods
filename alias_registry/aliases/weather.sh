@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # API Key for OpenWeatherMap
-API_KEY="f5ab3ad3f280f68fce430560c038f753"
+API_KEY="your_key"
 
 # Latitude and Longitude for the location (Middletown, Delaware)
 LAT="39.4496"
